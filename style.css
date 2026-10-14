@@ -1,13 +1,3 @@
-Você tem 1 nova mensagem.
-
-Pular para o conteúdo
-Como usar o E-mail de SEED com leitores de tela
-Conversas
- 
-Regulamentos do programa
-Powered by Google
-Última atividade da conta: há 5 dias
-Detalhes
 /* Configurações Globais de Acessibilidade */
 * {
     box-sizing: border-box;
@@ -22,6 +12,90 @@ body {
     background-color: #f4f6f9;
     color: #111111; /* Contraste forte contra o fundo */
     padding: 20px;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Fundo com Objetos Geométricos 3D Flutuantes */
+.fundo-3d {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.forma-3d {
+    position: absolute;
+    opacity: 0.18;
+    animation: flutuar 12s infinite ease-in-out alternate;
+}
+
+/* Cubo 3D */
+.cubo-3d {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, #003366, #0055a5);
+    border-radius: 12px;
+    transform: rotateX(45deg) rotateY(25deg) rotateZ(10deg);
+    box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.4), inset -5px -5px 15px rgba(255, 255, 255, 0.3);
+    top: 10%;
+    left: 5%;
+}
+
+/* Esfera 3D */
+.esfera-3d {
+    width: 110px;
+    height: 110px;
+    background: radial-gradient(circle at 30% 30%, #ffffff, #003366 70%, #001122 100%);
+    border-radius: 50%;
+    box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.3);
+    top: 60%;
+    right: 6%;
+    animation-delay: -4s;
+}
+
+/* Pirâmide / Diamante 3D */
+.piramide-3d {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, #002244, #0066cc);
+    transform: rotate(45deg) skew(15deg, 15deg);
+    box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.35);
+    top: 75%;
+    left: 8%;
+    animation-delay: -7s;
+}
+
+/* Anel 3D */
+.anel-3d {
+    width: 100px;
+    height: 100px;
+    border: 18px solid #003366;
+    border-top-color: #0066cc;
+    border-radius: 50%;
+    transform: rotateX(60deg) rotateY(20deg);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
+    top: 15%;
+    right: 8%;
+    animation-delay: -2s;
+}
+
+/* Animação suave para flutuar os objetos 3D */
+@keyframes flutuar {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-25deg) rotate(15deg);
+    }
+    100% {
+        transform: translateY(15deg) rotate(-10deg);
+    }
 }
 
 /* Cabeçalho */
@@ -32,6 +106,7 @@ header {
     padding: 30px 20px;
     border-radius: 12px;
     margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 header h1 {
@@ -43,23 +118,30 @@ header p {
     font-size: 24px;
 }
 
-/* Cartões de Dicas */
+/* Conteúdo Principal */
 main {
     max-width: 800px;
     margin: 0 auto;
 }
 
+/* Links nos cartões na página principal */
+a.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Cartões de Dicas */
 .card-dica {
     background-color: #ffffff;
     border: 3px solid #003366; /* Borda espessa para delimitação clara */
     border-radius: 12px;
     padding: 25px;
     margin-bottom: 25px;
-    cursor: pointer; /* Indica que o card é interativo/clicável */
+    cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Efeito ao passar o mouse por cima do Card */
 .card-dica:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -76,51 +158,87 @@ main {
     color: #222222;
 }
 
-/* Estilos da Modal Nativa (<dialog>) */
-.modal-dica {
-    border: 4px solid #003366;
-    border-radius: 16px;
-    padding: 30px;
-    max-width: 600px;
-    width: 90%;
-    margin: auto;
+/* Páginas Secundárias e Aprofundamento */
+.secao-detalhada {
     background-color: #ffffff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border: 3px solid #003366;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-.modal-dica h2 {
+.figura-tema {
+    text-align: center;
+    margin: 20px 0 30px 0;
+}
+
+.figura-tema svg {
+    max-width: 140px;
+    height: auto;
+    filter: drop-shadow(0px 8px 12px rgba(0, 0, 0, 0.2));
+}
+
+.secao-detalhada h2 {
     color: #003366;
     font-size: 30px;
+    margin-top: 20px;
     margin-bottom: 15px;
+    border-bottom: 2px solid #003366;
+    padding-bottom: 8px;
 }
 
-.modal-dica p {
+.secao-detalhada p {
     font-size: 22px;
     color: #111111;
+    margin-bottom: 20px;
+}
+
+.lista-passos {
+    margin-left: 30px;
     margin-bottom: 25px;
 }
 
-/* Efeito do Fundo Escurecido (Sobreposição/Overlay) */
-.modal-dica::backdrop {
-    background-color: rgba(0, 0, 0, 0.75); /* Escurece o resto da tela */
-    backdrop-filter: blur(4px); /* (Opcional) Adiciona um leve desfoque ao fundo */
+.lista-passos li {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #111111;
 }
 
-/* Botão de Fechar dentro da Modal */
-.btn-fechar {
+.caixa-alerta {
+    background-color: #fff3cd;
+    border-left: 8px solid #d9534f;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 25px 0;
+}
+
+.caixa-alerta h3 {
+    color: #a94442;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.caixa-alerta p {
+    margin-bottom: 0;
+    color: #333333;
+}
+
+/* Botão de Voltar */
+.btn-voltar {
+    display: inline-block;
     background-color: #003366;
     color: #ffffff;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
-    padding: 12px 24px;
-    border: none;
+    padding: 14px 28px;
+    text-decoration: none;
     border-radius: 8px;
-    cursor: pointer;
-    display: block;
-    margin-left: auto; /* Alinha o botão à direita */
+    margin-bottom: 25px;
+    transition: background-color 0.2s ease;
 }
 
-.btn-fechar:hover {
+.btn-voltar:hover {
     background-color: #002244;
 }
 
@@ -138,5 +256,3 @@ footer p {
     font-weight: bold;
     color: #003366;
 }
-style.css
-Exibindo index.html.
