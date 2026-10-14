@@ -8,6 +8,14 @@
 </head>
 <body>
 
+    <!-- Objetos Geométricos 3D no Fundo -->
+    <div class="fundo-3d">
+        <div class="forma-3d cubo-3d"></div>
+        <div class="forma-3d esfera-3d"></div>
+        <div class="forma-3d piramide-3d"></div>
+        <div class="forma-3d anel-3d"></div>
+    </div>
+
     <header>
         <h1>Navegue com Segurança</h1>
         <p>Dicas simples para usar o celular e a internet sem cair em golpes</p>
@@ -15,59 +23,33 @@
 
     <main>
         <!-- Card 1 -->
-        <article class="card-dica" onclick="abrirModal('modal1')">
-            <h2>1. Cuidado com Links e Mensagens Estranhas</h2>
-            <p>Clique aqui para ver a dica completa...</p>
-        </article>
-
-        <!-- Modal 1 -->
-        <dialog id="modal1" class="modal-dica">
-            <h2>1. Cuidado com Links e Mensagens Estranhas</h2>
-            <p>Nunca clique em links recebidos por SMS, WhatsApp ou e-mail informando sobre bloqueio de conta, entregas de encomendas pendentes ou prêmios. Bancos e empresas sérias não enviam links para atualização de dados ou senhas.</p>
-            <button class="btn-fechar" onclick="fecharModal('modal1')">Fechar Dica</button>
-        </dialog>
+        <a href="links-e-mensagens.html" class="card-link">
+            <article class="card-dica">
+                <h2>1. Cuidado com Links e Mensagens Estranhas</h2>
+                <p>Clique aqui para abrir a explicação completa e aprender a reconhecer mensagens falsas...</p>
+            </article>
+        </a>
 
         <!-- Card 2 -->
-        <article class="card-dica" onclick="abrirModal('modal2')">
-            <h2>2. Proteja suas Senhas e Códigos</h2>
-            <p>Clique aqui para ver a dica completa...</p>
-        </article>
-
-        <!-- Modal 2 -->
-        <dialog id="modal2" class="modal-dica">
-            <h2>2. Proteja suas Senhas e Códigos</h2>
-            <p>Suas senhas e os códigos de verificação recebidos por SMS (como o código de confirmação do WhatsApp) são secretos. Nenhum atendente de banco ou suporte técnico solicitará esses números.</p>
-            <button class="btn-fechar" onclick="fecharModal('modal2')">Fechar Dica</button>
-        </dialog>
+        <a href="senhas-e-codigos.html" class="card-link">
+            <article class="card-dica">
+                <h2>2. Proteja suas Senhas e Códigos</h2>
+                <p>Clique aqui para ver como manter seus códigos do WhatsApp e senhas totalmente protegidos...</p>
+            </article>
+        </a>
 
         <!-- Card 3 -->
-        <article class="card-dica" onclick="abrirModal('modal3')">
-            <h2>3. Confirme Pedidos de Ajuda por Mensagem</h2>
-            <p>Clique aqui para ver a dica completa...</p>
-        </article>
-
-        <!-- Modal 3 -->
-        <dialog id="modal3" class="modal-dica">
-            <h2>3. Confirme Pedidos de Ajuda por Mensagem</h2>
-            <p>Se algum familiar ou amigo enviar mensagem de um número novo pedindo dinheiro ou PIX urgente, não transfira imediatamente. Ligue para o número antigo da pessoa para confirmar a veracidade antes de realizar qualquer pagamento.</p>
-            <button class="btn-fechar" onclick="fecharModal('modal3')">Fechar Dica</button>
-        </dialog>
+        <a href="pedidos-de-ajuda.html" class="card-link">
+            <article class="card-dica">
+                <h2>3. Confirme Pedidos de Ajuda por Mensagem</h2>
+                <p>Clique aqui para entender o golpe do parente com número novo e como agir com segurança...</p>
+            </article>
+        </a>
     </main>
 
     <footer>
         <p>Dica de Ouro: Na dúvida, pare, respire e peça ajuda a um familiar ou pessoa de sua inteira confiança antes de clicar em qualquer lugar ou transferir dinheiro.</p>
     </footer>
 
-    <script>
-        function abrirModal(idModal) {
-            const modal = document.getElementById(idModal);
-            modal.showModal();
-        }
-
-        function fecharModal(idModal) {
-            const modal = document.getElementById(idModal);
-            modal.close();
-        }
-    </script>
 </body>
 </html>
